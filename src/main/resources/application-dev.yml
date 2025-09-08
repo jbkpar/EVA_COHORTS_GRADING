@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/${DB_NAME:gradesystem}
-    username: ${DB_USER:root}
-    password: ${DB_PASSWORD:password}
+    url: jdbc:mysql://localhost:3306/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
 
   jpa:
     hibernate:
@@ -10,7 +10,7 @@ spring:
     show-sql: true
 
 server:
-  port: ${PORT:9090}
+  port: ${PORT}
 
 jwt:
   secret: ${JWT_SECRET:defaultsecret}
