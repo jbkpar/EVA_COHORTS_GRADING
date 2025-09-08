@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/${DB_URL}
+    url: jdbc:mysql://localhost:3306/${DB_NAME}
     username: ${DB_USER}
-    password: ${DB_PASS}
+    password: ${DB_PASSWORD}
 
   jpa:
     show-sql: true   # <-- uses dash, not underscore
@@ -16,4 +16,4 @@ management:
         include: health, metrics, loggers, beans, env, info
 
 server:
-  port: ${SERVER_PORT}
+  port: ${PORT}
