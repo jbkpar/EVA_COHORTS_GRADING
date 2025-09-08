@@ -1,13 +1,13 @@
-package com.eva.cohort.grading.gradesystem;
+package EVA_COHORTS_GRADING;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GradesystemApplication {
+public class EvaCohortsGradingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GradesystemApplication.class, args);
+		SpringApplication.run(EvaCohortsGradingApplication.class, args);
 	}
 
 }
