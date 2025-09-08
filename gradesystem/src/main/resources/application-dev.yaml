@@ -2,8 +2,8 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/gradesystem
     username: root
-    password: password
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 2627
+
 
   jpa:
     hibernate:
@@ -14,4 +14,4 @@ server:
   port: 9090
 
 jwt:
-  secret: fsdfihsgiha
+  secret: 71711f3c5e1b9079ab16f833226cd12027a50a8110b2a8054f1eaf09383b2f7d

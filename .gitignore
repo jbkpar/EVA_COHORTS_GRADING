@@ -36,3 +36,5 @@ out/
 
 ### VS Code ###
 .vscode/
+gradesystem/src/main/resources/application-dev.yaml
+gradesystem/src/main/resources/application.properties
