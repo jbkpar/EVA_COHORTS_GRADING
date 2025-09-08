@@ -7,17 +7,16 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Grade {
+public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long submissionId;
-    private int pointsEarned;
-    private LocalDateTime gradedDate;
-    private long gradedByTeacherId;
+    private long assignmentId;
+    private String questionText;
+    private String answer;
+    private long answeredByTeacherId;
+
 }
