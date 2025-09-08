@@ -5,15 +5,9 @@ spring:
     password: ${DB_PASSWORD}
 
   jpa:
-    show-sql: true   # <-- uses dash, not underscore
     hibernate:
       ddl-auto: update
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, metrics, loggers, beans, env, info
+    show-sql: true
 
 server:
   port: ${PORT}
