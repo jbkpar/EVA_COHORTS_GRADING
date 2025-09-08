@@ -1,10 +1,10 @@
-package com.eva.cohort.grading.gradesystem;
+package EVA_COHORTS_GRADING;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GradesystemApplicationTests {
+class EvaCohortsGradingApplicationTests {
 
 	@Test
 	void contextLoads() {
