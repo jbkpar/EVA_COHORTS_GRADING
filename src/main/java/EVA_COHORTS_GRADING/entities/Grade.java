@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Grade {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -21,11 +20,4 @@ public class Grade {
     private int pointsEarned;
     private LocalDateTime gradedDate;
     private long gradedByTeacherId;
-
-
-    private double calculatePercentage(){
-        //TODO
-        return 0.00;
-    }
-
 }
