@@ -3,6 +3,7 @@ package EVA_COHORTS_GRADING.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
@@ -13,7 +14,7 @@ import java.util.List;
 @Table(name = "assignments")
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Data
 public class Assignment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
