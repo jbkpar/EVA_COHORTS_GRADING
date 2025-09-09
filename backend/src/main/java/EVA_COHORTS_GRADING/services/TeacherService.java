@@ -25,10 +25,12 @@ public class TeacherService {
         assignmentRepository.save(assignment);
     }
     public void publishAssignment(long assignmentId) {
-        assignmentService.publish(assignmentId);
+        Assignment assignment = assignmentRepository.findById(assignmentId).get();
+        assignmentService.publish(assignment.getTitle());
     }
     public void addQuestionToAssignment(long assignmentId) {
-        assignmentService.publish(assignmentId);
+        Assignment assignment = assignmentRepository.findById(assignmentId).get();
+        assignmentService.publish(assignment.getTitle());
     }
     public List<Submission> viewSubmissions() {
         return submissionRepository.findAll();

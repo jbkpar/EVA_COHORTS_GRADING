@@ -75,4 +75,5 @@ public class SubmissionService {
     public List<Submission> getSubmissionsByAssignment(Long assignmentId) {
         return submissionRepository.findByAssignmentId(assignmentId);
     }
+
 }
