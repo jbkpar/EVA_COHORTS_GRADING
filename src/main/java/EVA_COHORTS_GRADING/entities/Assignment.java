@@ -1,0 +1,42 @@
+package EVA_COHORTS_GRADING.entities;
+
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "assignments")
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class Assignment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @OneToMany(mappedBy = "assignment")
+    private List<Question> question = new ArrayList<>();
+
+    @Column(name = "points_possible", nullable = false)
+    private int pointsPossible;
+
+    @Column(name = "due_date", nullable = false)
+    private LocalDateTime dueDate;
+
+    @Column(name = "is_published", nullable = false)
+    private boolean isPublished = false;
+
+    @Column(name = "teacher_id", nullable = false)
+    private Long teacherId;
+}
