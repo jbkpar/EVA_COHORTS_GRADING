@@ -3,6 +3,7 @@ package EVA_COHORTS_GRADING.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @Table(name = "assignments")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Data
 public class Assignment {
     @Id
