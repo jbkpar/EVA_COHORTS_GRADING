@@ -10,4 +10,4 @@ spring:
     show-sql: true
 
 server:
-  port: ${PORT}
+  port: ${PORT:9090}
