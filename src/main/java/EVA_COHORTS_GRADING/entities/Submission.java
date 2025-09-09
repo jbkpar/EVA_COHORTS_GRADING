@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Table(name = "submissions")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Submission {
@@ -17,11 +18,7 @@ public class Submission {
     @Column(name = "student_id", nullable = false)
     private Long studentId;
 
-    @OneToMany
-    @JoinColumn(name = "submission_id")
-
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "assignment_id", nullable = false)
     private Assignment assignment;
 
@@ -31,16 +28,11 @@ public class Submission {
     @Column(name = "submission_date", nullable = false)
     private LocalDateTime submissionDate;
 
-    @Column(name = "file_path")
-    private String filePath;
 
     @OneToOne(mappedBy = "submission", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Grade grade;
 
-    // Constructors
-    public Submission() {
-        this.submissionDate = LocalDateTime.now();
-    }
+
 
     // getter and setter
 

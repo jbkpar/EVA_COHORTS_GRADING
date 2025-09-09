@@ -22,11 +22,12 @@ public class Assignment {
     @Column(nullable = false)
     private String title;
 
-    @Column(columnDefinition = "TEXT")
-    private String description;
+    @OneToMany(mappedBy = "assignment", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Question> questions = new ArrayList<>(); // Changed from 'question' to 'questions'
 
-    @OneToMany(mappedBy = "assignment")
-    private List<Question> question = new ArrayList<>();
+
+    @OneToMany(mappedBy = "assignment", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Submission> submissions = new ArrayList<>();
 
     @Column(name = "points_possible", nullable = false)
     private int pointsPossible;
