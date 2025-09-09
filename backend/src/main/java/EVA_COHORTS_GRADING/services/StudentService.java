@@ -29,7 +29,7 @@ public class StudentService {
         submission.setStudentId(studentId);
         submission.setContent(submissionContent);
     }
-    private List<Grade> viewGrades(long studentId){
+    public List<Grade> viewGrades(long studentId){
         List<Submission> submissions = submissionRepository.findByStudentId(studentId);
         List<Grade> grades = new ArrayList<>();
         for(Submission submission : submissions){
