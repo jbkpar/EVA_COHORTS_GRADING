@@ -1,16 +1,38 @@
 package EVA_COHORTS_GRADING.controllers;
 
+import EVA_COHORTS_GRADING.entities.Assignment;
+import EVA_COHORTS_GRADING.entities.Question;
+import EVA_COHORTS_GRADING.services.AssignmentService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/assignments")
 public class AssignmentController {
-    @GetMapping
-    public String getAllAssignments() { return "Get all assignments"; }
+    private final AssignmentService assignmentService;
 
-    @GetMapping("/{id}")
-    public String getAssignment(@PathVariable Long id) { return "Get assignment"; }
+
+
+    @PutMapping
+    public ResponseEntity<Void> publish(String id) {
+        assignmentService.publish(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<Question> addQuestion(@PathVariable String title, Question question) {
+
+        assignmentService.addQuestion(title, question);
+        return ResponseEntity.noContent().build();
+    }
 
     @DeleteMapping("/{id}")
-    public String deleteAssignment(@PathVariable Long id) { return "Delete assignment"; }
+    public ResponseEntity<Void> removeQuestion(@PathVariable String title, Question question) {
+        assignmentService.removeQuestion(title, question);
+        return ResponseEntity.noContent().build();
+    }
 }
