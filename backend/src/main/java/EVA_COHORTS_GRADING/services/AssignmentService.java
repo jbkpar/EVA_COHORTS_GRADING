@@ -14,17 +14,20 @@ public class AssignmentService {
     public void publish(long id){
         Assignment assignment = assignmentRepository.findById(id).get();
         assignment.setPublished(true);
+        assignmentRepository.save(assignment);
     }
     public void addQuestion(long id, Question question){
         Assignment assignment = assignmentRepository.findById(id).get();
         assignment.getQuestions().add(question);
         int points = assignment.getPointsPossible();
         assignment.setPointsPossible(points + 1);
+        assignmentRepository.save(assignment);
     }
     public void removeQuestion(long id, Question question){
         Assignment assignment = assignmentRepository.findById(id).get();
         assignment.getQuestions().remove(question);
         int points = assignment.getPointsPossible();
         assignment.setPointsPossible(points - 1);
+        assignmentRepository.delete(assignment);
     }
 }
