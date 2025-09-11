@@ -3,6 +3,7 @@ package EVA_COHORTS_GRADING.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,13 +15,14 @@ import java.util.List;
 @Table(name = "assignments")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Data
 public class Assignment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String title;
 
     @OneToMany(mappedBy = "assignment", cascade = CascadeType.ALL, orphanRemoval = true)

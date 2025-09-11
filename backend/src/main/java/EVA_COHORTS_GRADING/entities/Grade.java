@@ -2,6 +2,7 @@ package EVA_COHORTS_GRADING.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Grade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

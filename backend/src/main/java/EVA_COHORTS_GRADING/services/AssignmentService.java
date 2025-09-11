@@ -11,20 +11,23 @@ import org.springframework.stereotype.Service;
 public class AssignmentService {
     private final AssignmentRepository assignmentRepository;
 
-    public void publish(long id){
-        Assignment assignment = assignmentRepository.findById(id).get();
+    public void publish(String id){
+        Assignment assignment = assignmentRepository.findByTitle(id).get();
         assignment.setPublished(true);
+        assignmentRepository.save(assignment);
     }
-    public void addQuestion(long id, Question question){
-        Assignment assignment = assignmentRepository.findById(id).get();
+    public void addQuestion(String title, Question question){
+        Assignment assignment = assignmentRepository.findByTitle(title).get();
         assignment.getQuestions().add(question);
         int points = assignment.getPointsPossible();
         assignment.setPointsPossible(points + 1);
+        assignmentRepository.save(assignment);
     }
-    public void removeQuestion(long id, Question question){
-        Assignment assignment = assignmentRepository.findById(id).get();
+    public void removeQuestion(String id, Question question){
+        Assignment assignment = assignmentRepository.findByTitle(id).get();
         assignment.getQuestions().remove(question);
         int points = assignment.getPointsPossible();
         assignment.setPointsPossible(points - 1);
+        assignmentRepository.delete(assignment);
     }
 }
